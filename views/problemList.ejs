@@ -44,8 +44,8 @@
               <li><a href="/patientPage/<%=data.id%>/wellChildCheckForm">Well Child Check Form</a></li>
               <li><a href="/patientPage/<%=data.id%>/testing">Testing</a></li>
               <li><a href="/patientPage/<%=data.id%>/growthCharts">Growth Charts</a></li>
-              <li><a href="#section7">Nurse Notes</a></li>
-              <li><a href="#section8">Scans</a></li>
+              <li><a href="/patientPage/<%=data.id%>/nurseNotes">Nurse Notes</a></li>
+              <li><a href="/patientPage/<%=data.id%>/scans">Scans</a></li>
             </ul>
           </div>
         </nav>
@@ -188,6 +188,9 @@
               console.log("New chronic data: ");
               console.log(data);
               updateTableChronic(data.data[0].chronicEntries);
+              $('#chronicForm')[0].reset();
+              $('#chronicForm').hide();
+              $('#chronicForm').parent().find('button').show();
             }
         });
       });
@@ -211,6 +214,9 @@
               console.log("New chronic data: ");
               console.log(data);
               updateTableAcute(data.data[0].acuteEntries);
+              $('#acuteForm')[0].reset();
+              $('#acuteForm').hide();
+              $('#acuteForm').parent().find('button').show();
             }
         });
       });
