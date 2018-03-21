@@ -26,6 +26,8 @@ $(document).ready(function(){
 	      });
 
 	$('.section').on('click', '.editBtn', function() {
+		var edits = $(this).closest('.section').find('.editBtn');
+		var index = ($(edits).index(this));
 		$('.editBtn').hide()
 		var row = $(this).parent().parent();
 		$(this).parent().parent().attr('id', 'editingRow');
